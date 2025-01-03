@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -16,15 +15,15 @@ public class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Equals and Not Equals")
-    void test_Equals_And_Not_Equals() {
+    @DisplayName("Equals and Not Equals")
+    void testEqualsAndNotEquals() {
         assertEquals(6, demoUtils.add(2,4), "2+4 must be 6");
         assertNotEquals(6, demoUtils.add(1,9), "2+4 must not be 6");
     }
 
     @Test
-//    @DisplayName("Null and Not Null")
-    void test_Null_And_Not_Null() {
+    @DisplayName("Null and Not Null")
+    void testNullAndNotNull() {
         String str1 = null;
         String str2 = "luv2code";
 
@@ -32,20 +31,36 @@ public class DemoUtilsTest {
         assertNotNull(demoUtils.checkNull(str2), "object should not be null");
     }
 
-//
-//    @AfterEach
-//    void tearDownAfterEach() {
-//        System.out.println("Running @AfterEach");
-//        System.out.println();
-//    }
-//
-//    @BeforeAll
-//    static void setBeforeEachClass() {
-//        System.out.println("@BeforeAll executes only once before all test methods execution in the class");
-//    }
-//
-//    @AfterAll
-//    static void tearDownAfterAll() {
-//        System.out.println("@AfterAll executes only once after all test methods execution in the class");
-//    }
+    @Test
+    @DisplayName("Same and Not Same")
+    void testSameAndNotSame(){
+        String str = "luv2code";
+        assertSame(demoUtils.getAcademy(), demoUtils.getAcademyDuplicate(), "Objects should refer to the same object");
+        assertNotSame(str, demoUtils.getAcademyDuplicate(), "Objects should not refer to the same object");
+    }
+
+    @Test
+    @DisplayName("True and False")
+    void testTrueFalse() {
+        int grade1 = 10;
+        int grade2 = 5;
+        assertTrue(demoUtils.isGreater(grade1, grade2), "This should return true");
+        assertFalse(demoUtils.isGreater(grade2, grade1), "This should return false");
+    }
+
+/*    @AfterEach
+    void tearDownAfterEach() {
+        System.out.println("Running @AfterEach");
+        System.out.println();
+    }
+
+    @BeforeAll
+    static void setBeforeEachClass() {
+        System.out.println("@BeforeAll executes only once before all test methods execution in the class");
+    }
+
+    @AfterAll
+    static void tearDownAfterAll() {
+        System.out.println("@AfterAll executes only once after all test methods execution in the class");
+    }*/
 }
