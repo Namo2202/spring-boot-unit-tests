@@ -71,6 +71,13 @@ public class DemoUtilsTest {
         assertLinesMatch(theList, demoUtils.getAcademyInList(), "Lines should match");
     }
 
+    @Test
+    @DisplayName("Throws and Does Not Throw")
+    void testThrowsAndDoesNotThrow() {
+        assertThrows(Exception.class, ()->{demoUtils.throwException(-1);}, "Should throw exception");
+        assertDoesNotThrow(()->{demoUtils.throwException(9);}, "Should not throw exception");
+    }
+
 /*    @AfterEach
     void tearDownAfterEach() {
         System.out.println("Running @AfterEach");
