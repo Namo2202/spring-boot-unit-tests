@@ -14,7 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 @SpringBootTest(classes = MvcTestingExampleApplication.class)
 public class MockAnnotationTest {
@@ -46,5 +47,7 @@ public class MockAnnotationTest {
     @DisplayName("When & Verify")
     public void assertEqualsTestAddGrades() {
         when(applicationDao.addGradeResultsForSingleClass(studentGrades.getMathGradeResults())).thenReturn((100.0));
+        assertEquals(100, applicationService.addGradeResultsForSingleClass(studentOne.getStudentGrades().getMathGradeResults()));
+        verify(applicationDao, times(1)).addGradeResultsForSingleClass(studentGrades.getMathGradeResults());
     }
 }
