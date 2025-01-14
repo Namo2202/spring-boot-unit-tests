@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.luv2code.springmvc.StudentAndGradeServiceTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.96 s <<< FAILURE! - in com.luv2code.springmvc.StudentAndGradeServiceTest
+deleteStudentService  Time elapsed: 0.012 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Return True ==> expected: <true> but was: <false>
+	at com.luv2code.springmvc.StudentAndGradeServiceTest.deleteStudentService(StudentAndGradeServiceTest.java:101)
+
+deleteGradeService  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Returns student id after delete ==> expected: <1> but was: <0>
+	at com.luv2code.springmvc.StudentAndGradeServiceTest.deleteGradeService(StudentAndGradeServiceTest.java:157)
+
